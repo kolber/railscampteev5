@@ -7,7 +7,7 @@ require 'sinatra'
 require 'net/http'
 require 'uri'
 
-#raise "No WUFOO_API_KEY found in ENV" unless ENV["WUFOO_API_KEY"]
+raise "No WUFOO_API_KEY found in ENV" unless ENV["WUFOO_API_KEY"]
 
 get '/' do
   haml :v5
