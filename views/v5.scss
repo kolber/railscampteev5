@@ -4,8 +4,8 @@
 @import "font-journal";
 
 html {
-  background: #f9e8c6;
-  background: #f9e8c6 -webkit-gradient(radial, 50% 300, 0, 50% 300, 300, from(#fefcf9), to(#f9e8c6)) no-repeat;
+  background: #ff00ff;
+  background: #ff00ff -webkit-gradient(radial, 50% 300, 0, 50% 300, 300, from(#fefcf9), to(#ff00ff)) no-repeat;
 }
 
 body {
@@ -18,14 +18,14 @@ a {
   text-decoration: none;
 }
 
-$light-brown: #e9be80;
-$dark-brown: #ad6b0c;
-$babyBlue: #3db5cd;
+$light-brown: rgba(255, 159, 255, 1);
+$dark-brown: purple;
+$babyBlue: #ff00ff;
 $blueBiro: #037ac5;
 
 @mixin enamel {
   font-family: "EnamelBrushRegular-1", "EnamelBrushRegular-2";
-  text-shadow: 0 0 3px #fff;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
 @mixin rotated-enamel {
@@ -121,7 +121,8 @@ $blueBiro: #037ac5;
     line-height: 80px;
     text-shadow: none;
     &, a {
-      color: #ad6b0c;
+      color: rgba(255, 150, 0, 0.3);
+      text-shadow: -1px -3px 3px rgba(255, 255, 255, 0.2);
     }
   }
 
@@ -173,13 +174,8 @@ $blueBiro: #037ac5;
         @include enamel;
       }
       &.plus2 {
-        text-indent: -10000px;
-        background: url(/plus-2-logo.png) no-repeat 0 0;
-        width: 200px;
-        height: 48px;
-        &:hover, &:active {
-          background-position: 0 -48px;
-        }
+        font-size: 44px;
+        @include enamel;
       }
       &.me {
         font-size: 44px;
