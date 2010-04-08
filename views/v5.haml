@@ -57,11 +57,9 @@
       %img.pjb(src="/pjb-banana.gif" alt="It's Peanut Butter Jelly Time!")
       .stamps
       %p
-        We’re sorry<br>
-        This tee cannot be purchased<br>
-        from within your country of origin.<br>
+        Thanks!<br>
         %a{ :href => "http://railscampteev5.toolmantim.com/" }
-          Click here for more details.
+          System.InvalidCastException: The SqlParameterCollection only accepts non-null SqlParameter type objects, not String objects. at System.Data.SqlClient.SqlParameterCollection.ValidateType(Object value) at System.Data.SqlClient.SqlParameterCollection.Add(Object value) at ControlPanel.btnSetBid_Click
       
     %script
       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
