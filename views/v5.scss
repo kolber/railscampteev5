@@ -21,7 +21,7 @@ a {
 $light-brown: rgba(255, 159, 255, 1);
 $dark-brown: purple;
 $babyBlue: #ff00ff;
-$blueBiro: #037ac5;
+$blueBiro: purple;
 
 @mixin enamel {
   font-family: "EnamelBrushRegular-1", "EnamelBrushRegular-2";
@@ -189,7 +189,7 @@ $blueBiro: #037ac5;
   .props {
     overflow: hidden;
     width: 75%;
-    margin: 400px auto 0px;
+    margin: 520px auto 0px;
     p {
       float: left;
       width: 33%;
@@ -375,9 +375,9 @@ $orderButtonColor: lighten($orderMainColor, 15%);
     height: 313px;
   }
   p {
-    font: 60px/60px "Journal", Helvetica, sans-serif;
+    font: 40px/48px "EnamelBrushRegular-1", "EnamelBrushRegular-2", sans-serif;
     color: $blueBiro;
-    padding: 200px 0 0 80px;
+    padding: 200px 80px 0 80px;
     text-align: left;
   }
   &.zoomed-away {
