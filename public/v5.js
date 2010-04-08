@@ -53,21 +53,7 @@
       if (submitButton.attr("disabled")) {
         return false;
       }
-      form.data("original-button-text", submitButtonInner.text());
-      submitButtonInner.text("Reserving...");
-      $.ajax({
-        url: "http://railscampteev5.toolmantim.com/order",
-        type: "POST",
-        data: form.find("form").serialize(),
-        success: function success() {
-          return flip();
-        },
-        error: function error(xhr, status) {
-          var arguments = Array.prototype.slice.call(arguments, 0);
-          return console.log.apply(console, arguments);
-        }
-      });
-      formInputFields.attr("disabled", "disabled");
+      flip();
       return false;
     });
     flip = function flip() {

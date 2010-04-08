@@ -36,19 +36,7 @@ $ ->
 
   form.submit ->
     return false if submitButton.attr("disabled")
-    form.data("original-button-text", submitButtonInner.text())
-    submitButtonInner.text("Reserving...")
-    
-    $.ajax {
-      url: "http://railscampteev5.toolmantim.com/order"
-      type: "POST"
-      data: form.find("form").serialize()
-      success: -> flip()
-      error: (xhr, status) -> console.log(arguments...)
-    }
-
-    formInputFields.attr("disabled", "disabled")
-
+    flip()
     return false
 
   flip: ->
