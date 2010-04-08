@@ -15,6 +15,10 @@ $ ->
   formInputFields: form.find(":input")
   success: $("#order-form-success")
 
+  $("#sponsors-message").mouseover ->
+    $(this).fadeOut(6000)
+    return
+  
   $("a.order-now").click ->
     form.show()
     setTimeout (-> form.addClass("visible").find("input:first").focus()), 50

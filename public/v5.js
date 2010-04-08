@@ -16,6 +16,10 @@
     submitButtonInner = submitButton.find("strong");
     formInputFields = form.find(":input");
     success = $("#order-form-success");
+    $("#sponsors-message").mouseover(function() {
+      $(this).fadeOut(6000);
+      return null;
+    });
     $("a.order-now").click(function() {
       form.show();
       setTimeout((function() {
