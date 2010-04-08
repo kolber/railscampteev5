@@ -36,7 +36,7 @@ $ ->
     submitButtonInner.text("Reserving...")
     
     $.ajax {
-      url: "/order"
+      url: "http://railscampteev5.toolmantim.com/order"
       type: "POST"
       data: form.find("form").serialize()
       success: -> flip()

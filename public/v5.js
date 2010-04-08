@@ -24,20 +24,23 @@
       return false;
     });
     form.bind("change keydown", function() {
-      var _a, _b, _c, _d, _e, _f, _g, disabled, f, field, formValues, missingFields;
-      formValues = {};
-      _b = form.find("form").serializeArray();
-      for (_a = 0, _c = _b.length; _a < _c; _a++) {
-        f = _b[_a];
-        (formValues[f.name] = f.value);
+      var __a, __b, __c, __d, __e, disabled, f, field, formValues, missingFields;
+      formValues = {
+      };
+      __a = form.find("form").serializeArray();
+      for (__b = 0; __b < __a.length; __b++) {
+        f = __a[__b];
+        ((formValues[f.name] = f.value));
       }
       missingFields = (function() {
-        _d = []; _f = ["attendee", "name", "sex", "size"];
-        for (_e = 0, _g = _f.length; _e < _g; _e++) {
-          field = _f[_e];
-          !(formValues[field] == undefined ? undefined : formValues[field].length) ? _d.push(field) : null;
+        __c = []; __d = ["attendee", "name", "sex", "size"];
+        for (__e = 0; __e < __d.length; __e++) {
+          field = __d[__e];
+          if (!(formValues[field] == undefined ? undefined : formValues[field].length)) {
+            __c.push(field);
+          }
         }
-        return _d;
+        return __c;
       }).call(this);
       disabled = missingFields.length ? "disabled" : null;
       return submitButton.attr("disabled", disabled);
@@ -49,13 +52,14 @@
       form.data("original-button-text", submitButtonInner.text());
       submitButtonInner.text("Reserving...");
       $.ajax({
-        url: "/order",
+        url: "http://railscampteev5.toolmantim.com/order",
         type: "POST",
         data: form.find("form").serialize(),
         success: function success() {
           return flip();
         },
         error: function error(xhr, status) {
+          var arguments = Array.prototype.slice.call(arguments, 0);
           return console.log.apply(console, arguments);
         }
       });
